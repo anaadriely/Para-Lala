@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz aniversário, Lala!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #f8e2cf, #d4bebe);
+            font-family: 'Georgia', serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .envelope {
+            position: relative;
+            width: 320px;
+            height: 220px;
+            background: linear-gradient(to bottom, #ffafbd, #ffc3a0);
+            border-radius: 15px 15px 5px 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .envelope:hover {
+            transform: scale(1.05);
+        }
+        .carta {
+            background: #fff;
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            border: 2px solid #d4c7b0;
+            text-align: justify;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: transform 0.5s ease;
+        }
+        .titulo {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .data {
+            text-align: center;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .carta p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .assinatura {
+            text-align: right;
+            font-style: italic;
+            margin-top: 20px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 22px;
+        }
+        .mostrar {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .fechar {
+            display: block;
+            margin: 20px auto 0;
+            padding: 10px 20px;
+            background-color: #ff758c;
+            color: white;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+        .fechar:hover {
+            background-color: #ff5470;
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope" onclick="abrirCarta()">
+        📩 Clique para abrir
+    </div>
+    <div class="carta" id="carta">
+        <div class="titulo">Para: Laís, minha piloto</div>
+        <div class="data">07/02</div>
+        <p>
+            Lais, quero te desejar coisas incríveis pois você é alguém muito incrível e especial, torço muito por você e para que todos os seus planos deem certo. Tenho muito orgulho da pessoa que você está se tornando a cada dia e que irá conquistar o mundo, fazendo os voos mais altos dessa vida, porque você vai muito longe.
+        </p>
+        <p>
+            Obrigada pela sua amizade, que do seu jeitinho compartilha as coisas conosco. Desejo muito, muito sucesso na sua vida.
+        </p>
+        <p>
+            E pra acabar, conte comigo sempre que você precisar, nem que seja só pra perguntar qual bolsa combina com você (vou dizer todas porque você é gatona e tudo combina com você) ou pra falar sobre algo da vida. Estarei sempre na torcida por você. Se cuida e aproveita seu dia! Tenho muita sorte em ter você na minha vida. Que esse novo ciclo traga tudo de melhor para você!
+        </p>
+        <p class="assinatura">Com carinho,<br>Ana</p>
+        <button class="fechar" onclick="fecharCarta()">Fechar</button>
+    </div>
+    <script>
+        function abrirCarta() {
+            document.getElementById("carta").classList.add("mostrar");
+        }
+        function fecharCarta() {
+            document.getElementById("carta").classList.remove("mostrar");
+        }
+    </script>
+</body>
+</html>
